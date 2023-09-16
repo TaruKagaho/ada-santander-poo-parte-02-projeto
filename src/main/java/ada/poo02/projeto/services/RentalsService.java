@@ -3,7 +3,9 @@ package ada.poo02.projeto.services;
 import ada.poo02.projeto.models.CustomerModel;
 import ada.poo02.projeto.models.RentalModel;
 import ada.poo02.projeto.models.VehicleModel;
+import ada.poo02.projeto.repositories.CustomersRepository;
 import ada.poo02.projeto.repositories.RentalsRepository;
+import ada.poo02.projeto.repositories.VehiclesRepository;
 import ada.poo02.projeto.utils.CalculateExpenses;
 
 import java.time.LocalDateTime;
@@ -12,13 +14,22 @@ import java.util.List;
 
 public class RentalsService {
     private static RentalsRepository rentalsRepository;
-    private CustomersService customersService;
-    private VehiclesService vehiclesService;
+    private final CustomersService customersService;
+    private final VehiclesService vehiclesService;
 
-    public RentalsService() {
+    /*public RentalsService() {
         rentalsRepository = new RentalsRepository();
         this.customersService = new CustomersService();
         this.vehiclesService = new VehiclesService();
+    }*/
+    public RentalsService(
+            RentalsRepository rentalsRepository,
+            CustomersService customersService,
+            VehiclesService vehiclesService
+    ) {
+        RentalsService.rentalsRepository = rentalsRepository;
+        this.customersService = customersService;
+        this.vehiclesService = vehiclesService;
     }
 
     private RentalModel getRentalById(long id) {

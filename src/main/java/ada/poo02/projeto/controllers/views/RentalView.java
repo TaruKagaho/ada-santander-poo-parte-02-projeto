@@ -1,9 +1,16 @@
 package ada.poo02.projeto.controllers.views;
 
+import ada.poo02.projeto.controllers.CustomersController;
 import ada.poo02.projeto.controllers.RentalsController;
 import ada.poo02.projeto.controllers.VehiclesController;
 import ada.poo02.projeto.models.RentalModel;
 import ada.poo02.projeto.models.VehicleModel;
+import ada.poo02.projeto.repositories.CustomersRepository;
+import ada.poo02.projeto.repositories.RentalsRepository;
+import ada.poo02.projeto.repositories.VehiclesRepository;
+import ada.poo02.projeto.services.CustomersService;
+import ada.poo02.projeto.services.RentalsService;
+import ada.poo02.projeto.services.VehiclesService;
 import ada.poo02.projeto.utils.CurrencyFormatter;
 import ada.poo02.projeto.utils.InputHandler;
 
@@ -13,16 +20,28 @@ import java.util.List;
 import static ada.poo02.projeto.utils.DateHandler.createLocalDateTime;
 
 public class RentalView {
-    private RentalsController rentalsController;
-    private CustomersView customersView;
-    private VehiclesView vehiclesView;
-    private VehiclesController vehiclesController;
+    private final RentalsController rentalsController;
+    private final CustomersView customersView;
+    private final VehiclesView vehiclesView;
+    private final VehiclesController vehiclesController;
 
-    public RentalView() {
+    /*public RentalView() {
         this.rentalsController = new RentalsController();
         this.customersView = new CustomersView();
         this.vehiclesView = new VehiclesView();
         this.vehiclesController = new VehiclesController();
+    }*/
+
+    public RentalView(
+            RentalsController rentalsController,
+            CustomersView customersView,
+            VehiclesView vehiclesView,
+            VehiclesController vehiclesController
+    ) {
+        this.rentalsController = rentalsController;
+        this.customersView = customersView;
+        this.vehiclesView = vehiclesView;
+        this.vehiclesController = vehiclesController;
     }
 
     public boolean createNewRental() {

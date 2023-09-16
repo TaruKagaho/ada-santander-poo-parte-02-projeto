@@ -8,10 +8,13 @@ import java.util.List;
 public class VehiclesController {
     private VehiclesService vehiclesService;
 
-    public VehiclesController() {
+    /*public VehiclesController() {
         this.vehiclesService = new VehiclesService();
+    }*/
+    public VehiclesController(VehiclesService vehiclesService) {
+        this.vehiclesService = vehiclesService;
     }
-    
+
     public void createNewVehicle(VehicleModel newVehicle) {
         this.vehiclesService.addVehicle(newVehicle);
     }

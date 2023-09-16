@@ -7,24 +7,28 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class RentalsController {
-    private final RentalsService rentalSService;
+    private final RentalsService rentalsService;
 
-    public RentalsController() {
-        this.rentalSService = new RentalsService();
+    /*public RentalsController() {
+        this.rentalsService = new RentalsService();
+    }*/
+
+    public RentalsController(RentalsService rentalsService) {
+        this.rentalsService = rentalsService;
     }
 
     public void createNewRental(RentalModel newRental) {
-        this.rentalSService.addRental(newRental);
+        this.rentalsService.addRental(newRental);
     }
 
     public List<RentalModel> listRentalsActive() {
-        return this.rentalSService.getAllRentalsActive();
+        return this.rentalsService.getAllRentalsActive();
     }
 
     public double closeRental(long id) {
-        return this.rentalSService.finishRental(id);
+        return this.rentalsService.finishRental(id);
     }
     public double closeRental(long id, LocalDateTime dateTime) {
-        return this.rentalSService.finishRental(id, dateTime);
+        return this.rentalsService.finishRental(id, dateTime);
     }
 }

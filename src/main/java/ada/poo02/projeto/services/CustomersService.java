@@ -9,8 +9,12 @@ import java.util.List;
 public class CustomersService {
     private static CustomersRepository customersRepository;
 
-    public CustomersService() {
+    /*public CustomersService() {
         customersRepository = new CustomersRepository();
+    }*/
+
+    public CustomersService(CustomersRepository customersRepository) {
+        CustomersService.customersRepository = customersRepository;
     }
 
     // TODO: talvez mover método de validar documento para pasta utils

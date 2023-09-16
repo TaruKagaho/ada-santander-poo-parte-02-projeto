@@ -8,12 +8,12 @@ import java.util.List;
 public class CustomersController {
     private final CustomersService customersService;
 
-    /*public CustomersController(CustomersService customersService) {
+    public CustomersController(CustomersService customersService) {
         this.customersService = customersService;
-    }*/
-    public CustomersController() {
-        this.customersService = new CustomersService();
     }
+    /*public CustomersController() {
+        this.customersService = new CustomersService();
+    }*/
 
     public void createNewCustomer(CustomerModel newCustomer) {
         this.customersService.addCustomer(newCustomer);

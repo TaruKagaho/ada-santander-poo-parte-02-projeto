@@ -9,8 +9,12 @@ import java.util.List;
 public class VehiclesService {
     private static VehiclesRepository vehiclesRepository;
 
-    public VehiclesService() {
+    /*public VehiclesService() {
         vehiclesRepository = new VehiclesRepository();
+    }*/
+
+    public VehiclesService(VehiclesRepository vehiclesRepository) {
+        VehiclesService.vehiclesRepository = vehiclesRepository;
     }
 
     private boolean isNameplateAlreadyRegistered(VehicleModel vehicleToValidate, boolean isUpdate) {

@@ -10,10 +10,13 @@ import java.util.List;
 public class VehiclesView {
     private VehiclesController vehiclesController;
 
-    public VehiclesView() {
+    /*public VehiclesView() {
         this.vehiclesController = new VehiclesController();
+    }*/
+    public VehiclesView(VehiclesController vehiclesController) {
+        this.vehiclesController = vehiclesController;
     }
-    
+
     public boolean createNewVehicle() {
         System.out.println("\n ----- Cadastro de veículo ----- \n");
 

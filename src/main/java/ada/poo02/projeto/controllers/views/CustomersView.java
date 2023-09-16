@@ -8,10 +8,14 @@ import ada.poo02.projeto.utils.InputHandler;
 import java.util.List;
 
 public class CustomersView {
-    private CustomersController customersController;
+    private final CustomersController customersController;
 
-    public CustomersView() {
+    /*public CustomersView() {
         this.customersController = new CustomersController();
+    }*/
+
+    public CustomersView(CustomersController customersController) {
+        this.customersController = customersController;
     }
 
     public boolean createNewCustomer() {

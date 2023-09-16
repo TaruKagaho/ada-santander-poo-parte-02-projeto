@@ -3,19 +3,40 @@ package ada.poo02.projeto.controllers;
 import ada.poo02.projeto.controllers.views.CustomersView;
 import ada.poo02.projeto.controllers.views.RentalView;
 import ada.poo02.projeto.controllers.views.VehiclesView;
+import ada.poo02.projeto.repositories.CustomersRepository;
+import ada.poo02.projeto.repositories.VehiclesRepository;
+import ada.poo02.projeto.services.CustomersService;
+import ada.poo02.projeto.services.VehiclesService;
 
 import static ada.poo02.projeto.controllers.views.MenuView.show;
 import static ada.poo02.projeto.controllers.views.MenuView.tryAgain;
 
 public class MenuController {
-    private CustomersView customersView;
-    private VehiclesView vehiclesView;
-    private RentalView rentalView;
+    private final CustomersView customersView;
+    private final VehiclesView vehiclesView;
+    private final RentalView rentalView;
 
-    public MenuController() {
-        this.customersView = new CustomersView();
-        this.vehiclesView = new VehiclesView();
+    /*public MenuController() {
+        this.customersView = new CustomersView(
+                new CustomersController(
+                        new CustomersService(
+                                new CustomersRepository()
+                        )
+                )
+        );
+        this.vehiclesView = new VehiclesView(
+                new VehiclesController(
+                        new VehiclesService(
+                                new VehiclesRepository()
+                        )
+                )
+        );
         this.rentalView = new RentalView();
+    }*/
+    public MenuController(CustomersView customersView, VehiclesView vehiclesView, RentalView rentalView) {
+        this.customersView = customersView;
+        this.vehiclesView = vehiclesView;
+        this.rentalView = rentalView;
     }
 
     public boolean execute() {
