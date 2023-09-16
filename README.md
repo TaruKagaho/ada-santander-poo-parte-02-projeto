@@ -22,8 +22,8 @@ Criar uma aplicação que gerencie o aluguel de veículos, aplicando os conceito
 - RN5: Os veículos que estiverem alugados não poderão estar disponíveis;
 - RN6: Clientes não podem estar duplicados; Considerar CPF (Pessoa Física) e CNPJ (Pessoa Jurídica) como identificadores de unicidade;
 - RN7: Regras de devolução:
-    - Caso o cliente pessoa física tenha ficado com o carro mais que 5 diárias terá direito a 5% de desconto.
-    - Caso o cliente pessoa jurídica tenha ficado com o carro mais que 3 diárias terá direito a 10% de desconto.
+  - Caso o cliente pessoa física tenha ficado com o carro mais que 5 diárias terá direito a 5% de desconto.
+  - Caso o cliente pessoa jurídica tenha ficado com o carro mais que 3 diárias terá direito a 10% de desconto.
 
 Valores base da diária por tipo de veículo:
 
@@ -45,12 +45,21 @@ Entregar o link do repositório do projeto no GITHUB. Explicar no README do proj
 ## SOLID
 
 ### S - Responsabilidade única
+Consigo entender um pouco que a classe não deve ter métodos que fogem do seu escopo principal.
+Porém, possuo uma certa dificuldade de visualizar tais métodos.
+Acredito que com um pouco de prática serei capaz de implementar com mais naturalidade.
 
 ### O - Aberto-fechado
+Não consegui compreender direito tal princípio.
 
 ### L - Substituição de Liskov
+Novamente, não consegui compreender direito tal princípio.
 
 ### I - Segregação de interfaces
+Compreendo a importância deste princípio para o desacoplamento da classe.
+Contudo, por vezes não consigo viausalizar seu emprego.
+Com um pouco mais de prática, acredito que conseguirei.
 
 ### D - Inversão de dependência
+Compreendi de certo modo a teoria, porém levo um certo tempo para vislumbar aplicação num exercício.
 
